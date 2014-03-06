@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>
+		Mark Fennell - Web Developer - Infographic Resume
+	</title>
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	<script type="text/javascript">
+      google.load('visualization', '1.0', {'packages':['corechart','timeline','treemap']});
+      google.setOnLoadCallback(drawDBAChart);
+      google.setOnLoadCallback(drawLangChart);
+      google.setOnLoadCallback(drawExpChart);
+      google.setOnLoadCallback(drawTimeChart);
+
+      function drawDBAChart() {
+		var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Database');
+        data.addColumn('number', 'Experience');
+        data.addRows([
+          ['Oracle', 50],
+          ['SQL Server', 25],
+          ['MySQL/MariaDB', 15],
+          ['DB2', 5],
+          ['Others (H2, CouchDB, etc.)', 5]
+        ]);
+		var options = {//'title':'Database Experience',
+                       'width':450,
+                       'height':225,
+					   'colors':['#ddaa99','#ccaa99','#aa9966','#996633','#663300']};
+        var chart = new google.visualization.PieChart(document.getElementById('DBAchart_div'));
+        chart.draw(data, options);
+      }
+      function drawLangChart() {
+		var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Language');
+        data.addColumn('number', 'Experience');
+        data.addRows([
+          ['ColdFusion', 60],
+          ['PHP', 35],
+          ['Others (Ruby on Rails, etc.)', 5]
+        ]);
+var options = {//'title':'Web Application Experience',
+'height':225,
+'colors':['#aacc99','#99aa66','#669933','#336600']};
+        var chart = new google.visualization.PieChart(document.getElementById('Langchart_div'));
+        chart.draw(data, options);
+      }
+	  function drawExpChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Experience', 'Parent', 'Years', 'Expertise'],
+          ['Experience',    		null,                 	 0,		0],
+          ['Web Development',    	'Experience',            0,		0],
+          ['Databases',    			'Experience',            0,		0],
+          ['HTML',   				'Web Development',       20,	4.8],
+          ['JavaScript',    		'Web Development',       15,	4.0],
+          ['ColdFusion',    		'Web Development',       17,	4.8],
+          ['CSS',    				'Web Development',       15,	4.0],
+          ['PHP',    				'Web Development',       15,	4.0],
+          ['AJAX',    				'Web Development',       5,		2.0],
+          ['Google APIs',    		'Web Development',   	 5,		2.0],
+          ['JQuery',    			'Web Development',       3,		2.0],
+          ['Bootstrap',    			'Web Development',       1,		1.0],
+          ['Less/Sass',    			'Web Development',       1,		1.0],
+          ['Oracle',      			'Databases',             15,	4.5],
+          ['SQL Server',      		'Databases',             7,		3.5],
+          ['DB2',      				'Databases',             3,		2.5],
+          ['MySQL',      			'Databases',             5,		2.5],
+          ['PostgreSQL',      		'Databases',             3,		2.5],
+          ['H2',      				'Databases',             1,		2.5],
+          ['CouchDB',      			'Databases',             1,		2.5]
+        ]);
+var tree = new google.visualization.TreeMap(document.getElementById('Expchart_div'));
+tree.draw(data, {
+minColor: '#630',
+midColor: '#ddd',
+maxColor: '#ac9',
+headerHeight: 15,
+fontColor: 'black',
+useWeightedAverageForAggregation: 'true',
+title: '(click, right-click to interact)',
+showScale: true});
+}
+function drawTimeChart() {
+var container = document.getElementById('Timechart_div');
+var chart = new google.visualization.Timeline(container);
+var dataTable = new google.visualization.DataTable();
+dataTable.addColumn({ type: 'string', id: 'Employer' });
+dataTable.addColumn({ type: 'date', id: 'Start' });
+dataTable.addColumn({ type: 'date', id: 'End' });
+dataTable.addRows([
+[  'Exploration Resources', 	new Date(1996, 0, 0), new Date(1997, 0, 0) ],
+[  'NE Ga Internet Access',      			new Date(1997, 0, 0),  new Date(1998, 0, 0) ],
+[  'Athens Banner-Herald',  	new Date(1998, 0, 0),  new Date(1999, 1, 4) ],
+[  'Athens Regional',  new Date(1999, 1, 4),  new Date(2012, 11, 1) ],
+[  'Acuity Brands',  	new Date(2012, 11, 0),  new Date(2014, 3, 0)  ]]);
+var options = {//'title':'Employment',
+'height':280,
+'colors':['#da9','#ca9','#a96','#963','#630'],
+'groupByRowLabel':false};
+chart.draw(dataTable, options);
+}
+</script>
+<link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
+<link rel="stylesheet" href="css/bootstrap-responsive.css" type="text/css"/>
+</head>
+<body>
+<div class="container">
+<div class="hero-unit">
+<h1>Mark Fennell</h1>
+<p>mark@the-fennells.org -- <a href="http://mark.the-fennells.org">http://mark.the-fennells.org</a></p>
+</div>
+<h2>Employment History</h2>
+<div class="row">
+<div class="span12">
+<div id="Timechart_div"></div>
+</div>
+</div>
+<h2>Development Experience</h2>
+<div class="row-fluid">
+<div class="span6"><div id="Langchart_div"></div>
+</div>
+<div class="span6">
+<p>
+My first web site was an online tutorial for a gopher server in the UGA Department of English. That was in 1995.<br>
+By 1999, I was the lead developer for the corporate intranet at Athens Regional Medical Center implementing technologies such as 
+ColdFusion, PHP, Javascript and CSS. With over 4,000 users and millions of page views each month, the intranet served business and clinical needs.<br>
+This resume was written using Google Chart APIs and Twitter's Bootstrap.
+</p>
+</div>	
+</div>	
+<h2>Database Experience</h2>
+<div class="row-fluid">
+<div class="span6">
+<p>
+As a curious person I am always eager to learn. As a DBA this means I have researched more cutting-edge technologies such as CouchDB and H2. 
+The right tool for the job can be the difference between long-term success and instant struggles to keep up. At Acuity Brands, I was responsible 
+for migrating a large corporate database from Oracle to SQL Server using replication.
+<ul>
+<li> 19 years SQL development
+<li> 15 years Oracle DBA
+<li> 4 years SQL Server DBA
+</ul>
+</p>
+</div>	
+<div class="span6"><div id="DBAchart_div"></div></div>
+</div>
+
+
+<h2>Experience Map</h2>
+<div class="row">
+<div class="span12">
+<div id="Expchart_div" style="height: 300px;"></div>
+With a history of performance as a web developer, I have a broad knowledge of technologies and techniques for creating websites that respond to customer needs and a 
+passion for new technologies. My work portfolio is available online at <a href="http://mark.the-fennells.org/portfolio/">http://mark.the-fennells.org/portfolio/</a>. 
+I have also had fun with Photoshop, creating desktop calendars available online at <a href="http://mark.the-fennells.org/calendars/">http://mark.the-fennells.org/calendars/</a>.
+</div>
+</div>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="span12">
+			<a href="http://www.linkedin.com/pub/mark-fennell/4b/654/100"><img src="http://www.linkedin.com/img/webpromo/btn_viewmy_160x33.png" width="160" height="33" border="0" alt="View Mark Fennell's profile on LinkedIn"></a>
+		</div>
+	</div>
+</div>
+		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+		<script src="js/bootstrap.js"></script>
+	</body>
+</html>
