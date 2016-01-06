@@ -20,11 +20,11 @@
         data.addColumn('string', 'Database');
         data.addColumn('number', 'Experience');
         data.addRows([
-          ['Oracle', 50],
+	  ['Oracle', 50],
           ['SQL Server', 25],
-          ['MySQL/MariaDB', 15],
-          ['DB2', 5],
-          ['Others (H2, CouchDB, etc.)', 5]
+          ['MySQL/MariaDB', 10],
+          ['Others (CouchDB, Redis, etc.)', 10],
+          ['DB2', 5]
         ]);
 		var options = {//'title':'Database Experience',
                        'height':225,
@@ -37,9 +37,9 @@
         data.addColumn('string', 'Language');
         data.addColumn('number', 'Experience');
         data.addRows([
-          ['ColdFusion', 60],
-          ['PHP', 35],
-          ['Others (Ruby on Rails, etc.)', 5]
+          ['ColdFusion', 55],
+          ['PHP', 30],
+          ['Others (Node,js, Ruby on Rails, etc.)', 15]
         ]);
 var options = {//'title':'Web Application Experience',
 'height':225,
@@ -49,7 +49,7 @@ var options = {//'title':'Web Application Experience',
       }
 	  function drawExpChart() {
         var data = google.visualization.arrayToDataTable([
-          ['Experience', 'Parent', 'Years', 'Expertise'],
+	  ['Experience', 'Parent', 'Years', 'Expertise'],
           ['Experience',    		null,                 	 0,		0],
           ['Web Development',    	'Experience',            0,		0],
           ['Databases',    			'Experience',            0,		0],
@@ -58,18 +58,16 @@ var options = {//'title':'Web Application Experience',
           ['ColdFusion',    		'Web Development',       17,	4.8],
           ['CSS',    				'Web Development',       15,	4.0],
           ['PHP',    				'Web Development',       15,	4.0],
-          ['AJAX',    				'Web Development',       5,		2.0],
           ['Google APIs',    		'Web Development',   	 5,		2.0],
           ['JQuery',    			'Web Development',       3,		2.0],
-          ['Bootstrap',    			'Web Development',       1,		1.0],
-          ['Less/Sass',    			'Web Development',       1,		1.0],
+          ['Bootstrap',    			'Web Development',       3,		1.0],
           ['Oracle',      			'Databases',             15,	4.5],
           ['SQL Server',      		'Databases',             7,		3.5],
-          ['DB2',      				'Databases',             3,		2.5],
-          ['MySQL',      			'Databases',             5,		2.5],
-          ['PostgreSQL',      		'Databases',             3,		2.5],
-          ['H2',      				'Databases',             1,		2.5],
-          ['CouchDB',      			'Databases',             1,		2.5]
+          ['DB2',      				'Databases',             1,		1.5],
+          ['MySQL',      			'Databases',             3,		2.5],
+          ['PostgreSQL',      		'Databases',             1,		1.5],
+          ['Redis',    				'Databases',             3,		2.5],
+          ['CouchDB',      			'Databases',             3,		2.5]
         ]);
 var tree = new google.visualization.TreeMap(document.getElementById('Expchart_div'));
 tree.draw(data, {
@@ -126,6 +124,7 @@ chart.draw(dataTable, options);
 My first web site was an online tutorial for a gopher server in the UGA Department of English. That was in 1995.<br>
 By 1999, I was the lead developer for the corporate intranet at Athens Regional Medical Center implementing technologies such as 
 ColdFusion, PHP, Javascript and CSS. With over 4,000 users and millions of page views each month, the intranet served business and clinical needs.<br>
+Most recently, I have used Redis Cache and Node.JS to build a live map of devices in an IoT application.<br>
 This resume was written using Google Chart APIs and Twitter's Bootstrap.
 </p>
 </div>	
@@ -141,6 +140,8 @@ for migrating a large corporate database from Oracle to SQL Server using replica
 <li> 19 years SQL development
 <li> 15 years Oracle DBA
 <li> 4 years SQL Server DBA
+<li> 2 years CouchDB/Couchbase development</li>
+<li> 1 year Redis Cache development</li>
 </ul>
 </p>
 </div>	
